@@ -1,0 +1,190 @@
+extend includes/base
+
+block header
+
+block content 
+	section.sales
+		.slides
+			.slide
+				.container
+					.flex_container
+						.content_text
+							div.stock 
+								span акция 
+								| до 2 февраля
+							h1 Тепломаш 500W
+							p Завесы серии 500 предназначены для защиты ворот высотой      до 6,0м крупных промышленных предприятий, железнодорожных депо 
+								a(href="#") Подробнее...
+							div.old_price 38 045 грн.  
+							div.new_price 38 045 грн.
+							a.button(href="#") 
+								| Купить 
+								i.icon.cart
+		.sliders_nav
+			a.icon.arrow.top(href="")
+			.sliders_nav__wrapper_overflow.sliders__wrapper
+				.sliders_nav__wrapper
+					each item,i  in nav_slider.item
+						if i==1
+							a.slider_nav.active(href= item.link)
+								img(src='images/slider/'+ item.img, alt= item.title)
+						else
+							a.slider_nav(href= item.link)
+								img(src='images/slider/'+ item.img, alt= item.title)
+			a.icon.arrow.bottom(href="")
+	section.about
+		.container
+			.flex_container.flex__center
+				each item in about_us.item
+					.flex_container.item
+						i.icon(class= item.icon)
+						.text
+							h4= item.head
+							ul
+								each item1 in item.more
+									li
+										span= item1
+	section.news
+		.categories
+			.container
+				.wrapper_block
+					.flex_container.flex__left.flex__center
+						h4 Новые поступления
+						each item,i in news.items
+							if i==0
+								a(href="#" +i).tab_item.active= item.category_name
+							else
+								a(href="#" +i).tab_item= item.category_name
+		.products
+			.container
+				.wrapper_block.slides_products
+					a.icon.arrow.left(href="")
+					
+					.sliders__wrapper
+						each item,i in news.items
+							if i==0
+								div.products_tab(id='#' +i, class='active' )
+									.flex_container.flex-products.slides
+										each item2,j in item.products
+											div.product
+												img(src= item2.image, alt="")
+												.info
+													h3= item2.name
+													h5= item2.category
+												.price_wrapper
+													.price= item2.price
+													a.button(href='')
+														| Купить 
+														i.icon.cart
+													a.button(href='').balance_button
+														i.icon.balance
+							else
+								div.products_tab(id='#' +i)
+									.flex_container.flex-products.slides
+										each item2,j in item.products
+											div.product
+												img(src= item2.image, alt="")
+												.info
+													h3= item2.name
+													h5= item2.category
+												.price_wrapper
+													.price= item2.price
+													a.button(href='')
+														| Купить 
+														i.icon.cart
+													a.button(href='').balance_button
+														i.icon.balance
+
+					a.icon.arrow.right(href="")
+
+	section.tops
+		.categories
+			.container
+				.wrapper_block
+					.flex_container.flex__left.flex__center
+						h4 Популярные товары
+						each item,i in news.items
+							if i==0
+								a(href="#" +i).tab_item.active= item.category_name
+							else
+								a(href="#" +i).tab_item= item.category_name
+		.products
+			.container
+				.wrapper_block.slides_products
+					a.icon.arrow.left(href="")
+					
+					.sliders__wrapper
+						each item,i in news.items
+							if i==0
+								div.products_tab(id='#' +i, class='active' )
+									.flex_container.flex-products.slides
+										each item2,j in item.products
+											div.product
+												img(src= item2.image, alt="")
+												.info
+													h3= item2.name
+													h5= item2.category
+												.price_wrapper
+													.price= item2.price
+													a.button(href='')
+														| Купить 
+														i.icon.cart
+													a.button(href='').balance_button
+														i.icon.balance
+							else
+								div.products_tab(id='#' +i)
+									.flex_container.flex-products.slides
+										each item2,j in item.products
+											div.product
+												img(src= item2.image, alt="")
+												.info
+													h3= item2.name
+													h5= item2.category
+												.price_wrapper
+													.price= item2.price
+													a.button(href='')
+														| Купить 
+														i.icon.cart
+													a.button(href='').balance_button
+														i.icon.balance
+
+					a.icon.arrow.right(href="")
+
+	section.posts
+		.categories
+			.container
+				.wrapper_block
+					.flex_container.flex__left.flex__center
+						h4 Статьи и советы
+		.container
+			.wrapper_block
+				.flex_container.flex__posts
+					each item in posts
+
+						div.post
+							.wrapper_block
+								.flex__post.flex_container
+									div
+										img(src= item.image, alt="")
+									div
+
+										h4= item.name
+										p= item.text
+										a(href="").button.more Читать далее
+	block footer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

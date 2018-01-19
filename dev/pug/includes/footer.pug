@@ -1,0 +1,51 @@
+footer
+	.container
+		.wrapper_block
+			.flex_container
+				div
+
+					.flex_container.flex__left.contact_block
+						i.icon.loc
+						div
+							a.contact__adr(href="#" target='_blank') 
+								strong г. Одесса, 
+								br
+								| ул. Базарная 63
+					
+					.flex_container.flex__left.contact_block
+						i.icon.mail
+						div
+							a.contact__mail(href="mailto:office@kit.biz.ua") office@kit.biz.ua
+			
+					.flex_container.flex__left.contact_block
+						i.icon.phone
+						div
+							.contact_item
+								a.contact__tel(href="tel:+380487155222") +38 (048) 715-52-22
+							.contact_item
+								a.contact__tel(href="tel:+380487877781") +38 (048) 787-77-81
+					//- a.button(href="#") Заказать звонок
+
+				div
+					.nav
+						each item in nav.item
+							a(href= item.link)= item.name
+					.carts
+						img(src="images/footer/visa.png", alt="")
+						img(src="images/footer/master.png", alt="")
+						img(src="images/footer/privat.png", alt="")
+				div
+					.social.wrapper_link
+						each item in social.item
+							a.icon(
+								href= item.link 
+								title= item.icon 
+								class= item.icon)
+					.form__block
+						.forms__item
+							label 
+								input(type='text' name='mail')
+								span.click Подписаться на рассылку
+						input(type="submit" value='Оправит').button
+block scripts
+	script(src='js/script.js')

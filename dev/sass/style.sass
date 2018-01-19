@@ -1,0 +1,361 @@
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+	outline: none
+	transition: color 0.4s, box-shadow 0.4s, background-color 0.4s, padding-bottom 0.2s
+
+@import 'includes/typography'
+@import 'includes/ico'
+// COLORS
+
+$red: #ed1c24
+$green: #7ecd69
+$light-grey: #f2f2f2
+$grey: #e5e5e5
+$dark-grey: #111111
+
+body
+a
+	color: $green
+	text-decoration: none
+	&:hover,
+	&.active
+		color: darken($green, 20%)
+
+@import 'includes/grid'
+@import 'includes/forms'
+@import 'includes/header'
+@import 'includes/footer'
+
+//////////////////////////////
+// List
+//////////////////////////////
+
+ol,ul
+	padding-left: 20px
+	li
+		color: $red
+		span
+			color: black
+
+////////////////////////////////
+// BUTTON
+////////////////////////////////
+
+.button
+	background-color: $red
+	padding: 5px 25px
+	color: white
+	font-weight: 900
+	font-size: 1.6rem
+	border-radius: 25px
+
+	&:hover,
+	&:active
+		color: white
+		box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.25);
+		background-color: lighten($red, 10%)
+
+	&.balance_button
+		background-color: $green
+		padding: 5px 9px
+		&:hover
+			background-color: lighten($green, 10%)
+	&.more
+		background-color: $green
+		&:hover
+			background-color: lighten($green, 10%)
+
+///////////////////////////////////////////////
+// sections
+///////////////////////////////////////////////
+
+section
+	margin: 20px 0
+.sales
+	position: relative
+	margin-top: 0
+	.slides
+		.slide
+			background-image: url(../images/back.jpg)
+			background-repeat: no-repeat
+			background-position: -250px
+			background-size: cover
+			@media (max-width: 1698px)
+				background-position: -270px
+			@media (max-width: 1508px)
+				background-position: -300px
+				
+			@media (max-width: 1308px)
+				background-position: -350px
+			@media (max-width: 1100px)
+				background-position: -250px
+			@media (max-width: 900px)
+				background-position: -300px	
+			@media (max-width: 350px)
+				background-position: -500px	
+			.flex_container
+				justify-content: center
+			.content_text
+				position: relative
+				flex-basis: 500px
+				margin: 20rem 0
+				font-size: 1.8rem
+				@media (max-width: 1508px)
+					margin: 15rem 0
+				@media (max-height: 1300px)
+					margin: 10rem 0
+				@media (max-width: 1100px)
+					margin: 5rem 0
+				@media (max-width: 600px)
+					font-size: 1.4rem
+				
+				.icon.cart
+					font-weight: 600
+
+			.button
+				display: inline-block
+			.stock
+				@media (min-width: 682px)
+					position: absolute
+					transform: rotate(270deg)
+					left: -120px
+					top: 100px
+				display: inline-block
+				border-bottom: 1px solid black
+				span
+					color: $red
+	.sliders_nav
+		position: absolute
+		right: 200px
+		top: 0
+		height: 100%
+		padding: 7rem 0
+		overflow: hidden
+		@media (max-width: 1278px)
+			right: 100px
+		@media (max-width: 1100px)
+			padding: 4rem 0
+		@media (max-width: 950px)
+			right: 40px
+		@media (max-width: 814px)
+			position: relative
+			padding: 0 40px
+			margin-top: -2rem
+			right: 0
+
+		&:after
+			width: 100%
+			position: absolute
+			content: ''
+			height: 100px
+			top: 0
+			z-index: 0
+			right: 0
+			background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 100%)
+		&:before
+			width: 100%
+			position: absolute
+			content: ''
+			height: 100px
+			bottom: 0
+			right: 0
+			z-index: 1
+			background: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 100%)
+
+		// @media (max-width: 600px)
+		// 	padding: 0 20px
+
+		.sliders_nav__wrapper_overflow
+			// overflow: hidden
+
+			@media (min-width: 814px)
+				height: 100%
+		.sliders_nav__wrapper
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			@media (max-width: 814px)
+				flex-direction: row
+				align-items: center
+			
+		.arrow
+			color: black
+			font-size: 6rem
+			z-index: 3
+			left: 50%
+			@media (max-width: 1100px)
+				font-size: 3rem
+			@media (max-width: 814px)
+				left: initial
+			&:hover
+				color: lighten($dark-grey, 30%)
+			&.top
+				display: inline-block
+				transform: rotate(270deg)
+				position: absolute
+				top: 1rem
+				@media (max-width: 814px)
+					transform: rotate(180deg)
+					top: 25%
+					left: 0
+			&.bottom
+				display: inline-block
+				transform: rotate(90deg)
+				position: absolute
+				bottom: 1rem
+				@media (max-width: 814px)
+					transform: rotate(0deg)
+					bottom: initial
+					top: 25%
+					right: 0
+			&.desable
+				opacity: 0.5
+		.slider_nav
+			display: block
+			width: 250px
+			position: relative
+			transition: all 0.4s
+			@media (max-width: 1500px)
+				width: 200px
+			@media (max-width: 1100px)
+				width: 150px
+				min-width: 20%
+				margin: 0 0px
+				padding: 0 10px
+			@media (max-width: 600px)
+				padding: 0 3px
+
+			@media (max-width: 500px)
+				min-width: 33%
+			&.active
+				border: 2px solid $green
+				padding: 18px 20px
+				overflow: hidden
+				border-radius: 50%
+				z-index: 1
+				@media (max-width: 500px)
+					padding: 0px 5px
+			img
+				width: 100%
+
+
+.about
+	.flex__center
+		@media (min-width: 528px)
+			flex-wrap: nowrap
+	.icon
+		font-size: 10rem
+		margin: 10px 10px 0 10px
+		@media (max-width: 1306px) 
+			font-size: 6rem
+		@media (max-width: 1008px) and  (min-width: 528px)
+			margin: 10px
+		@media (max-width: 690px) and  (min-width: 528px)
+			font-size: 4rem
+	.item
+		padding: 0 40px
+		border-right: 1px solid $light-grey
+		border-bottom: 1px solid $light-grey
+		align-items: flex-end
+
+		@media (max-width: 1306px)
+			padding: 0 20px
+		@media (max-width: 1064px)
+			padding: 0 10px
+		@media (max-width: 1008px) and  (min-width: 528px)
+			// flex-direction: column
+			align-items: flex-start
+			border: none
+			padding: 0 20px
+		@media (max-width: 824px) and  (min-width: 528px)
+			flex-basis: 200px
+		@media (max-width: 680px) and  (min-width: 528px)
+			flex-basis: 150px
+		@media (max-width: 528px)
+			width: 100%
+			border: none
+			justify-content: flex-start
+			margin: 10px 0
+			flex-wrap: nowrap
+
+
+
+
+		&:last-child
+			border-right: none
+section
+	.categories
+		background-color: $green
+		h4
+			padding: 0 15px 0 5px
+			color: white
+.news,
+.tops
+	
+	.tab_item
+		color: black
+		padding: 5px 15px
+		margin: -5px -1px
+		border-right: 2px solid white
+		border-left: 2px solid white
+		font-size: 1.8rem
+		&.active
+			background-color: white
+			border-top: 2px solid $green
+			border-right: 2px solid $green
+			border-left: 2px solid $green
+			margin: -5px -2px
+			position: relative
+			z-index: 1
+	.products
+		.slides_products
+			position: relative
+			.slides
+				overflow-x: hidden
+			.arrow
+				position: absolute
+				top: 50%
+				left: -20px
+				font-size: 6rem
+				color: black
+				@media(max-width: 600px)
+					font-size: 4rem
+					left: -10px
+				&:hover
+					color: lighten(black, 50%)
+				&.left
+					transform: rotate(180deg)
+				&.right
+					right: -20px
+					left: initial
+					@media(max-width: 600px)
+						right: -10px
+			.flex-products
+				flex-wrap: nowrap
+		.products_tab
+			display: none
+			&.active
+				display: block
+		.product
+			text-align: center
+			border: 1px solid $light-grey
+			.info
+				padding: 15px
+			.price_wrapper
+				background-color: $light-grey
+				display: flex
+				justify-content: space-around
+				padding: 15px
+				.price
+					font-size: 2.4rem
+					font-weight: 600
+
+.posts
+	background-color: $light-grey
+	.post
+		background-color: white
+		padding: 15px
+		img
+			width: 100%

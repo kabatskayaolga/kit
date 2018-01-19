@@ -1,0 +1,69 @@
+header
+	.header_top
+		.container
+			.flex_container
+				.language.wrapper_link
+					a(href="#").active Русский
+					a(href="#") Украинский
+				.social.wrapper_link
+					each item in social.item
+						a.icon(
+							href= item.link 
+							title= item.icon 
+							class= item.icon)
+
+	.header_middle
+		.container
+			.flex_container
+				div
+				
+					a(href="")
+						img(src="images/logo.jpg", alt="")
+				.contacts.flex_container
+					.contact
+						.flex_container.flex__left
+							i.icon.loc
+							div
+								a.contact__adr(href="#" target='_blank') 
+									strong г. Одесса, 
+									br
+									| ул. Базарная 63
+						
+						.flex_container.flex__left
+							i.icon.mail
+							div
+								a.contact__mail(href="mailto:office@kit.biz.ua") office@kit.biz.ua
+					.contact
+						.flex_container.flex__left
+							i.icon.phone
+							div
+								.contact_item
+									a.contact__tel(href="tel:+380487155222") +38 (048) 715-52-22
+								.contact_item
+									a.contact__tel(href="tel:+380487877781") +38 (048) 787-77-81
+						a.button(href="#") Заказать звонок
+				.search__form
+					.form__block
+						.forms__item
+							label 
+								input(type='text' name='search')
+								span.click Поиск
+						input(type="submit" value='').search__form_button
+				.shop__buttons.wrapper_link
+					a(href="").icon.balance
+					a(href="").icon.cart
+						span.number_of_goods 1
+	.header_bottom
+		.container
+			.flex_container.menu_wrapper
+				div
+					a.menu_button(href='#') 
+						i.icon.menu 
+						| Каталог товаров
+				.nav.flex_container
+					each item in nav.item
+						a(href= item.link)= item.name
+				div
+					a.login_button(href='#') 
+						i.icon.login 
+						| Авторизация

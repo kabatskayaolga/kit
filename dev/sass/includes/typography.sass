@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Istok+Web')
+
+html
+	font-size: 62.5%
+
+body
+	font-size: 1.4rem
+	font-family: 'Istok Web', sans-serif
+
+h1
+	font-size: 4.8rem
+	font-weight: 400
+	@media (max-width: 418px)
+		font-size: 3.6rem
+		font-weight: 600
+
+h3
+	font-size: 2.2rem
+p
+	margin-bottom: 1rem
+h5
+	font-size: 1.4rem
+	font-weight: 400
+
+
+.old_price
+	font-size: 1.8rem
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		width: 100px
+		left: 0
+		bottom: 50%
+		
+		height: 1px
+		background-color: black
+
+
+.new_price
+	font-size: 3rem
